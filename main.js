@@ -50,17 +50,26 @@ class Container {
 			console.log(error)
 		}
 	}
+	getRandom() {
+		try {
+			const productList = this.getAll();
+			const id = Math.floor(Math.random() * (productList.length - 1 + 1) + 1);
+			return this.getById(id);
+		} catch (error) {
+			console.log(error)
+		}
+	}
 }
 
 const productList = new Container("./productos.json")
 
-productList.save(
-	{
-		title: 'Whatever',
-		price: 345.67,
-		thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png'
-	}
-)
+// productList.save(
+// 	{
+// 		title: 'Whatever',
+// 		price: 345.67,
+// 		thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png'
+// 	}
+// )
 
 // console.log(productList.getAll())
 
@@ -69,3 +78,5 @@ productList.save(
 // productList.deleteById(2)
 
 // productList.deleteAll()
+
+module.exports = Container;
