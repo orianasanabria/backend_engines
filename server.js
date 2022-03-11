@@ -1,24 +1,19 @@
-const express = require('express')
-const Container = require('./main.js')
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser')
 const app = express();
 
-const PORT = 4040;
-const products = new Container("./productos.json")
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.set('port', process.env.PORT || 3000);
 
-const server = app.listen(PORT, () => {
-	console.log(`Server running | Port ${server.address().port}`)
-})
+// Router
+app.use(require('./routes'))
 
-app.get('/', (req, res) => {
-	res.send(`Server running | Port ${server.address().port}`)
-})
+// Static Files
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/products', (req, res) => {
-	const productList = products.getAll()
-	res.json(productList)
-})
-
-app.get('/randomProduct', (req, res) => {
-	const randomProd = products.getRandom()
-	res.json(randomProd)
+// Start Server
+app.listen(app.get('port'), () => {
+	console.log(`Server on Port ${app.get('port')}`)
 })

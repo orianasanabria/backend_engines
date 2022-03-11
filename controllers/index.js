@@ -21,7 +21,7 @@ class Container {
 			const data = this.getAll();
 			return data.find(item => item.id === id)
 		} catch (error) {
-			console.log(error);
+			console.log(error)
 		}
 	}
 	getAll() {
@@ -59,9 +59,26 @@ class Container {
 			console.log(error)
 		}
 	}
+
+
+	updateProduct(id) {
+		try {
+			const productList = this.getAll();
+			const filteredProduct = productList.find(el => el.id === id)
+			if(!filteredProduct) return;
+
+			filteredProduct.name = name;
+			filteredProduct.price = price;
+			filteredProduct.image = image;
+
+			fs.writeFileSync(this.fileName, JSON.stringify(productList, null, 2), "utf-8")
+		} catch (error) {
+			console.log(error)
+		}
+	}
 }
 
-const productList = new Container("./productos.json")
+const productList = new Container("./products.json")
 
 // productList.save(
 // 	{
@@ -71,7 +88,7 @@ const productList = new Container("./productos.json")
 // 	}
 // )
 
-// console.log(productList.getAll())
+// console.log(productList.updateProduct(1))
 
 // console.log(productList.getById(1))
 
