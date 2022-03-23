@@ -7,13 +7,13 @@ const fs = require('fs');
 const productList = new Container("./products.json")
 const router = new Router;
 
-router.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname + '/../views/index.html'));
-});
+// router.get('/', function (req, res) {
+// 	res.sendFile(path.join(__dirname + '/../public/index.html'));
+// });
 
 router.get('/products', (req, res) => {
 	const data = productList.getAll();
-	res.json(data);
+	return res.render('products', { data: data })
 })
 
 router.get('/products/:id', (req, res) => {
@@ -29,7 +29,8 @@ router.get('/products/:id', (req, res) => {
 router.post('/products', (req, res) => {
 	const { name, price, image } = req.body;
 	productList.save({ name, price, image });
-	res.json({ massega: "Producto Creado" })
+	const data = productList.getAll();
+	return res.render('products', { data: data })
 })
 
 router.delete('/products/:id', (req, res) => {
@@ -61,5 +62,9 @@ router.put('/products/:id', (req, res) => {
 	}
 
 })
+
+router.get("/", async (req, res) => {
+  res.render("form")
+});
 
 module.exports = router;

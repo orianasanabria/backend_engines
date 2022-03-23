@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("components/formHead.ejs") %>
+  <body>
+    <div class="container mt-5">
+      <form role="form" action="/products" method="POST" class="mb-5">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="image">Image URL</label>
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            name="image"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <%- include("components/formButtons.ejs") %>
+    </div>
+  </body>
+</html>

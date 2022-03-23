@@ -2,7 +2,7 @@
   {
     "name": "Escuadra",
     "price": 123.45,
-    "image": "https://cdn3.iconfinder.com/datancons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "image": "https://cdn1.iconfinder.com/data/icons/office-icons-17/512/ilustracoes_04-03-256.png",
     "id": 1
   },
   {
@@ -16,5 +16,11 @@
     "price": 345.67,
     "image": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
     "id": 3
+  },
+  {
+    "name": "Lapiz",
+    "price": "100",
+    "image": "https://cdn2.iconfinder.com/data/icons/basic-flat-icon-set/128/pencil-128.png",
+    "id": 4
   }
 ]

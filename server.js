@@ -17,3 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(app.get('port'), () => {
 	console.log(`Server on Port ${app.get('port')}`)
 })
+
+// Engine
+app.set("views", "./views")
+app.set("view engine", "ejs")
+  

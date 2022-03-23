@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(function(i){  %>
+          <tr>
+            <th scope="row"><%= i.id %></th>
+            <td><%= i.name %></td>
+            <td><%= i.price %></td>
+            <td style="width: 5rem;"><img class="card-img-top" src=<%= i.image %> class="card-img-top" alt="<%= i.name %>"></td>
+          </tr>
+             <% }) %>
+        </tbody>
+    </table>
+</div>
