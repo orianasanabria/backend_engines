@@ -20,5 +20,5 @@ app.listen(app.get('port'), () => {
 
 // Engine
 app.set("views", "./views")
-app.set("view engine", "ejs")
+app.set("view engine", "pug")
   
