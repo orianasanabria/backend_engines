@@ -1,0 +1,24 @@
+<div class="container mb-5">
+	<h2 class="display-5 text-center m-5">Product List</h2>
+	<table class="table">
+		<thead class="table-dark">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Price</th>
+				<th scope="col">Image</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data}}
+			<tr>
+				<th scope="row">{{this.id}}</th>
+				<td>{{this.name}}</td>
+				<td>{{this.price}}</td>
+				<td style="width: 4rem;"><img class="card-img-top" src={{this.image}} class="card-img-top"
+						alt="<%= x.name %>"></td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>

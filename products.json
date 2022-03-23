@@ -22,5 +22,11 @@
     "price": "100",
     "image": "https://cdn2.iconfinder.com/data/icons/basic-flat-icon-set/128/pencil-128.png",
     "id": 4
+  },
+  {
+    "name": "Book",
+    "price": "200",
+    "image": "https://cdn2.iconfinder.com/data/icons/unigrid-phantom-multimedia-vol-6/60/020_290_advice_knowledge_book_howto_idea_help-128.png",
+    "id": 5
   }
 ]

@@ -1,4 +1,5 @@
 const express = require('express');
+const handlebars = require('express-handlebars')
 const path = require('path');
 const bodyParser = require('body-parser')
 const app = express();
@@ -19,6 +20,15 @@ app.listen(app.get('port'), () => {
 })
 
 // Engine
+app.engine(
+  'hbs',
+  handlebars({
+    extname: '.hbs',
+    defaultLayout: 'index.hbs',
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir: __dirname + '/views/partials/'
+  })
+)
+
 app.set("views", "./views")
-app.set("view engine", "pug")
-  
+app.set("view engine", "hbs")

@@ -13,7 +13,7 @@ const router = new Router;
 
 router.get('/products', (req, res) => {
 	const data = productList.getAll();
-	return res.render('products.pug', { data: data })
+	return res.render('products', { data: data })
 })
 
 router.get('/products/:id', (req, res) => {
@@ -30,7 +30,7 @@ router.post('/products', (req, res) => {
 	const { name, price, image } = req.body;
 	productList.save({ name, price, image });
 	const data = productList.getAll();
-	return res.render('products.pug', { data: data })
+	return res.render('products', { data: data })
 })
 
 router.delete('/products/:id', (req, res) => {
@@ -64,7 +64,7 @@ router.put('/products/:id', (req, res) => {
 })
 
 router.get("/", async (req, res) => {
-  res.render("form.pug")
+  res.render("form")
 });
 
 module.exports = router;
